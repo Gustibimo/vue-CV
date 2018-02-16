@@ -8,17 +8,17 @@
     },
     {
         "hidden": false,
-        "title": "Tic-Tac-Toe Cubed",
-        "description": "A 9x9 Tic-Tac-Toe Game",
-        "link": "http://thalida.github.io/TicTacToeCubed/",
+        "title": "Integrated Porn Autocensor",
+        "description": "Porn content censoring system based on browser extension using Logistic Regression for image classification and TF.IDF for text classification",
+        "link": "http://thalida.github.io/",
         "github": "https://github.com/thalida/TicTacToeCubed"
     },
     {
         "hidden": false,
-        "title": "Timezone",
-        "description": "Convert any datetime from one timezone to another",
-        "link": "https://thalida.github.io/Timezone/",
-        "github": "https://github.com/thalida/Timezone"
+        "title": "Huginn & Muninn",
+        "description": "IOS and Android application for sepulsa.com. Built using Objective-C and Native Java",
+        "link": "https://itunes.apple.com/id/app/sepulsa/id991045758?mt=8",
+        "github": "https://github.com/Gustibimo/parrot2"
     },
     {
         "hidden": true,
