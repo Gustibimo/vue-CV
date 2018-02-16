@@ -35,19 +35,17 @@
     },
     {
         "hidden": false,
-        "title": "ShapeConnector",
-        "description": "A puzzle game where the goal is to get from one shape to another in a specified amount of moves.",
-        "link": "http://shapeconnector.com",
-        "github": "https://github.com/thalida/ShapeConnector",
-        "dribbble": "https://dribbble.com/thalida/projects/307956-ShapeConnector"
-    },
+        "title": "Detik-PageRank",
+        "description": "Implemented and designed data lake for further pipelined to many application. Developed application to counting real time page view articles for determine trending and most popular articles.",
+        "link": "http://detik.com",
+        "github": "https://github.com/detikcom/mostpopular",
+   },
     {
         "hidden": false,
-        "title": "CiphersCodes",
-        "description": "ciphers.codes is a ciphers translator which will encode + decode a given piece of text.",
-        "link": "http://ciphers.codes",
-        "github": "https://github.com/thalida/CiphersCodes",
-        "dribbble": "https://dribbble.com/thalida/projects/307949-EncodeDecode"
+        "title": "Muninn",
+        "description": "Android payment app built using Java",
+        "link": "https://play.google.com/store/apps/details?id=com.sepulsa.android&hl=in",
+        "github": "https://github.com/Sepulsa/Muninn",
     },
     {
         "hidden": true,
