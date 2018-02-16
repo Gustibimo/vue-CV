@@ -1,5 +1,5 @@
 # vue-CV
-> Personal website/portfolio
+> Personal website/portfolio/CV
 
 ## Build Setup
 
