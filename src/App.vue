@@ -91,7 +91,102 @@ export default {
       this.weather_getCurrent();
     },
   },
-  
+  methods: {
+  //  ==========================================================================
+  //  METHODS.TIME
+  //  --------------------------------------------------------------------------
+
+    // time_setup()
+    //    Starts an interval to update the time used in the space scene
+    //  ------------------------------------------------------------------------
+    time_setup() {
+      // Create interval for updating time data
+      setInterval(this.time_tick, this.time.tickInterval);
+    },
+
+    // time_tick()
+    //    Updates the time currTick with triggers, which triggers the watcher
+    //    watch.currentTimeTick(). This update results in a new this.currentTime.
+    //  ------------------------------------------------------------------------
+    time_tick() {
+      if (this.time.currTick >= this.time.maxTicks) {
+        this.time.currTick = 0;
+      } else {
+        this.time.currTick += 1;
+      }
+    },
+
+    // time_updateNow()
+    //    Update time with a new now value using moment for magic
+    //  ------------------------------------------------------------------------
+    time_updateNow() {
+      this.time.now = moment();
+    },
+
+    // time_getCurrent()
+    //    Based on the current time (time.now) get the current time group and colors
+    //  ------------------------------------------------------------------------
+    time_getCurrent() {
+      // Get the start + end colors - as well as the time used
+      const range = this.time_getRange(this.time.now);
+      const interval = {};
+      const distance = {};
+      const endRangeTime = (range.groups[1].startHour === 0) ? 24 : range.groups[1].startHour;
+      const numHrsInRange = Math.abs(endRangeTime - range.groups[0].startHour);
+      const timeSinceRangeBegin = Math.abs(range.time.hour - range.groups[0].startHour);
+      const colorParts = ['r', 'g', 'b'];
+      const isCloserToStart = timeSinceRangeBegin < (numHrsInRange - 1);
+      let newColor = [];
+      let group = null;
+      let gradient = {
+        start: null,
+        end: null,
+      };
+
+      // Get the total # of hours b/w the two groups
+      // Split the transition distance (1) to pieces for each hour mark
+      interval.hour = +(1 / numHrsInRange).toFixed(3);
+      // Split the hour interval into 60 pieces (1 for each minute)
+      interval.minute = +(interval.hour / 60).toFixed(3);
+
+      // Calculate the current hour + minute values using the intervals
+      distance.hour = +(interval.hour * timeSinceRangeBegin).toFixed(3);
+      distance.minute = +(interval.minute * range.time.minute).toFixed(3);
+      distance.total = +(distance.hour + distance.minute).toFixed(3);
+
+      for (let i = 0; i < colorParts.length; i += 1) {
+        const part = colorParts[i];
+        const startColor = range.groups[0].color[part];
+        const endColor = range.groups[1].color[part];
+        const transitionColor = Math.round(endColor + ((startColor - endColor) * distance.total));
+        newColor.push(transitionColor);
+      }
+
+      newColor = this.formatColor(newColor);
+
+      if (isCloserToStart) {
+        group = range.groups[0];
+        gradient = {
+          start: this.formatColor(group.color),
+          end: newColor,
+        };
+      } else {
+        group = range.groups[1];
+        gradient = {
+          start: newColor,
+          end: this.formatColor(group.color),
+        };
+      }
+
+      return {
+        now: this.time.now,
+        group,
+        color: {
+          ...newColor,
+          gradient,
+        },
+      };
+    },
 
     // time_getRange()
     //    Based on a time, figure out the group it's currently in as well as the
