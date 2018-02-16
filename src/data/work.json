@@ -1,0 +1,35 @@
+[
+    {
+        "company": "Detikcom",
+        "title": "Big Data Engineer",
+        "duration": "Oct 2017 - Now",
+        "desc": "Work",
+        "location": {
+            "city": "Greater Jakarta City",
+            "state": "Jakarta",
+            "country": "Indonesia"
+        }
+    },
+    {
+        "company": "Sepulsa.com",
+        "title": "Mobile Apps Developer",
+        "duration": "Aug 2017 - Oct 2017",
+        "desc": "Work",
+        "location": {
+            "city": "Greater Jakarta City",
+            "state": "Jakarta",
+            "country": "Indonesia"
+        }
+    },
+    {
+        "company": "Etanee",
+        "title": "Frontend Developer",
+        "duration": "Jan 2016 - Nov 2017",
+        "desc": "Work",
+        "location": {
+            "city": "Bogor City",
+            "state": "West Java",
+            "country": "Indonesia"
+        }
+    }
+]
