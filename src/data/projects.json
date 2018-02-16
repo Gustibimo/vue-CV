@@ -1,10 +1,10 @@
 [
     {
         "hidden": false,
-        "title": "bit.ly roulette",
-        "description": "random bit.ly url",
-        "link": "https://thalida.github.io/bitly-roulette/",
-        "github": "https://github.com/thalida/bitly-roulette"
+        "title": "Frigate",
+        "description": "Developing Sepulsa.com Mobile Web Application using React JS. The aim of the project is to replace the traditional mobile web to a faster, more responsive, mobile application alike - web site. Visit m.sepulsa.com to see the project.",
+        "link": "https://m.sepulsa.com",
+        "github": "https://github.com/Sepulsa/Frigate"
     },
     {
         "hidden": false,
