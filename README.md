@@ -1,5 +1,4 @@
-# thalida.com
-
+# vue-CV
 > Personal website/portfolio
 
 ## Build Setup
